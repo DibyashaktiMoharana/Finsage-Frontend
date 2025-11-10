@@ -56,7 +56,7 @@ function LoginPage() {
             aadhaar: aadhaar,
           };
           console.log(`📡 Calling ${endpoint} for ${viewType} with payload:`, payload);
-          const response = await fetch(`http://localhost:8000${endpoint}`, {
+          const response = await fetch(`https://finsage-backend-5t6s.onrender.com/${endpoint}`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
