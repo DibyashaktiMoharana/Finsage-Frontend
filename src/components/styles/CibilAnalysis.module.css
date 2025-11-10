@@ -1,0 +1,600 @@
+.cibilRoot {
+  padding: 1.5rem;
+  /* min-height: 100vh; */
+  /* height: 100vh; */
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+}
+
+.cibilGrid {
+  width: 100%;
+  gap: 1.5rem;
+  row-gap: 0.5rem;
+  flex: 1;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: 
+    "score utilization financial timeline"
+    "recommendations recommendations recommendations timeline";
+  /* height: 100vh; */
+  align-items: start;
+}
+
+.cibilTile {
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  height: 100%;
+  min-height: 0;
+  max-height: none;
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom for stacked tiles, if any */
+  /* margin-bottom: 1.5rem; */
+}
+
+.gridAreaTimeline .cibilTile,
+.gridAreaRecommendations .cibilTile {
+  /* height: 100%; */
+  min-height: 0;
+  max-height: none;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* Limit the height of the recommendations content for scrollability */
+.recommendationsContent {
+  /* flex: 1; */
+  /* overflow-y: auto; */
+  padding-right: 0.5rem;
+  /* max-height: 340px; */
+  /* height: 0; */
+  min-height: 0;
+}
+
+/* Reduce EMI Timeline min-height */
+/* Target the EMI tile by using the grid area */
+.cibilGrid > div[style*='grid-area:timeline'] .cibilTile {
+  /* min-height: 120px; */
+  /* max-height: 180px; */
+  /* height: 180px; */
+}
+
+.sectionHeader {
+  margin-bottom: 1rem;
+}
+.sectionTitle {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #161616;
+}
+.sectionSubtitle {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.875rem;
+  color: #525252;
+}
+
+.centeredFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 1.5rem;
+}
+
+.financialDetailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  flex: 1;
+  align-content: center;
+}
+.financialLabel {
+  font-size: 0.72rem;
+  color: #8d8d8d;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+}
+.financialValue {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #161616;
+  text-align: center;
+}
+
+.cibilListIconRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.recommendationsContainer {
+  /* height: 100%; */
+  max-height: 280px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
+}
+
+.recommendationsContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.recommendationsContent::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.recommendationsContent::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.recommendationsContent::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.recommendationsListItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.recommendationsListItem:last-child {
+  border-bottom: none;
+}
+
+.recommendationsIcon {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.recommendationsText {
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Gauge container styles */
+.gaugeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.gaugeSvg {
+  margin-bottom: 1.2rem;
+}
+
+.gaugeProgressArc {
+  transition: stroke-dashoffset 1.5s ease-out;
+}
+
+.gaugeNeedleGroup {
+  transition: transform 1.5s ease-out;
+}
+
+.scoreDisplay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.scoreNumber {
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 4px;
+}
+
+.scoreTag {
+  margin-bottom: 8px;
+}
+
+.scoreChangeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 800;
+  gap: 0.2rem;
+  letter-spacing: -1px;
+}
+
+.scoreArrow {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.scoreArrowVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.scoreArrowHidden {
+  opacity: 0;
+  transform: scale(0.7);
+}
+
+.scoreChangeValue {
+  font-weight: 800;
+  margin-left: -0.18rem;
+}
+
+.scoreChangeLabel {
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+/* Credit utilization styles */
+.utilizationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 1.75rem;
+}
+
+.utilizationSvg {
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.utilizationArc {
+  transition: stroke-dashoffset 1.2s ease-out;
+}
+
+.utilizationLegend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 0;
+}
+
+.utilizationLegendItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.utilizationLegendDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.utilizationLegendText {
+  font-size: 13px;
+  color: #525252;
+  font-weight: 500;
+}
+
+/* Metric tile styles */
+.metricTile {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 120px;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.metricIcon {
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.metricValue {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.metricLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: #161616;
+}
+
+.metricHelper {
+  font-size: 12px;
+  color: #8d8d8d;
+  margin-top: 2px;
+}
+
+/* Financial overview card styles */
+.financialOverviewCard {
+  padding: 1rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid var(--cds-border-subtle);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.financialOverviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--cds-text-secondary);
+}
+
+.financialOverviewTrend {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.financialOverviewTrendPositive {
+  color: var(--cds-support-success);
+}
+
+.financialOverviewTrendNegative {
+  color: var(--cds-support-error);
+}
+
+/* Grid area styles */
+.gridAreaScore {
+  grid-area: score;
+}
+
+.gridAreaUtilization {
+  grid-area: utilization;
+}
+
+.gridAreaFinancial {
+  grid-area: financial;
+}
+
+.gridAreaRecommendations {
+  grid-area: recommendations;
+  margin-top: 0;
+  align-self: end;
+}
+
+.gridAreaTimeline {
+  grid-area: timeline;
+  align-self: end;
+}
+
+/* Recommendations section styles */
+.recommendationsSection {
+  margin-bottom: 1.25rem;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+  padding-bottom: 0.5rem;
+}
+
+.recommendationsList {
+  margin-top: 0.75rem;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.recommendationsIconSuccess {
+  color: var(--cds-support-success);
+}
+
+.recommendationsIconInfo {
+  color: var(--cds-support-info);
+}
+
+/* EMI timeline styles */
+.emiTimelineContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.7rem;
+  margin-top: 20px;
+  padding-top: 12px;
+  width: 100%;
+  /* overflow-y: auto; */
+  padding-left: 0;
+}
+
+.emiTimelineItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  max-width: 200px;
+  gap: 0.95rem;
+}
+
+.emiTimelineItem:last-child {
+  margin-bottom: 2px;
+}
+.emiTimelineText {
+  display: flex;
+  align-items: baseline;
+  min-width: 50px; /* Fixed minimum width to ensure alignment */
+}
+
+.emiTimelineDot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2.2px solid #f8f8f8;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.emiTimelineDotPaid {
+  background: var(--cds-support-success);
+  box-shadow: 0 0 0 2px var(--cds-support-success);
+}
+
+.emiTimelineDotMissed {
+  background: var(--cds-support-error);
+  box-shadow: 0 0 0 2px var(--cds-support-error);
+}
+
+.emiTimelineMonth,
+.emiTimelineYear {
+  display: inline-block;
+  vertical-align: middle;
+  padding-left: 3px;
+}
+
+.emiTimelineMonth {
+  font-size: 15px;
+  color: #8d8d8d;
+  font-weight: 650;
+  margin-right: 6px;
+}
+
+.emiTimelineYear {
+  font-size: 13px;
+  color: #c6c6c6;
+  font-weight: 550;
+}
+
+.emiTimelineLegend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3.2rem;
+  font-size: 12px;
+}
+
+.emiTimelineLegendItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.emiTimelineLegendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0;
+  margin-bottom: 4px;
+}
+
+.emiTimelineLegendDotPaid {
+  background: var(--cds-support-success);
+}
+
+.emiTimelineLegendDotMissed {
+  background: var(--cds-support-error);
+}
+
+.emiTimelineLegendItem span {
+  text-align: center;
+}
+
+/* Financial details grid styles */
+.financialDetailsWarning {
+  grid-column: 1 / -1;
+  margin-top: 0.5rem;
+}
+
+.financialDetailsGrid .bx--tag,
+.financialDetailsGrid .cds--tag {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.financialDetailsGrid > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dynamic color classes for metric tiles */
+.metricIconGreen {
+  background: var(--cds-support-success) + '22';
+}
+
+.metricIconBlue {
+  background: var(--cds-support-info) + '22';
+}
+
+.metricIconYellow {
+  background: var(--cds-support-warning) + '22';
+}
+
+.metricIconRed {
+  background: var(--cds-support-error) + '22';
+}
+
+.metricValueGreen {
+  color: var(--cds-support-success);
+}
+
+.metricValueBlue {
+  color: var(--cds-support-info);
+}
+
+.metricValueYellow {
+  color: var(--cds-support-warning);
+}
+
+.metricValueRed {
+  color: var(--cds-support-error);
+}
+
+/* Border color classes for metric tiles */
+.metricTileGreen {
+  border: 1.5px solid var(--cds-support-success);
+}
+
+.metricTileBlue {
+  border: 1.5px solid var(--cds-support-info);
+}
+
+.metricTileYellow {
+  border: 1.5px solid var(--cds-support-warning);
+}
+
+.metricTileRed {
+  border: 1.5px solid var(--cds-support-error);
+} 
+
+.fullHeightTile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+} 

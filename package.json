@@ -1,0 +1,46 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@carbon/charts": "^1.23.13",
+    "@carbon/charts-react": "^1.23.13",
+    "@carbon/grid": "^11.38.0",
+    "@carbon/icons-react": "^11.62.0",
+    "@carbon/react": "^1.85.1",
+    "@carbon/styles": "^1.84.0",
+    "@carbon/themes": "^11.55.0",
+    "axios": "^1.10.0",
+    "carbon-components": "^10.59.2",
+    "carbon-components-react": "^7.60.3",
+    "d3": "^7.9.0",
+    "lucide-react": "^0.525.0",
+    "next": "15.3.5",
+    "puppeteer": "^24.15.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-is": "^19.1.0",
+    "react-markdown": "^10.1.0",
+    "recharts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/carbon-components-react": "^7.55.13",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.5",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5"
+  }
+}

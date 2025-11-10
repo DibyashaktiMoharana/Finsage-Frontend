@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 50">
+  <g fill="#000000">
+    <path d="M0 8h13v2H0zm0 4h13v2H0zm0 4h13v2H0zm0 4h13v2H0zm0 4h13v2H0zm0 4h13v2H0zm0 4h13v2H0zm0 4h13v2H0zm0 4h13v2H0z"/>
+    <path d="M15 8h16v2H15zm0 4h16v2H15zm0 4h16v2H15zm0 4h16v2H15zm0 4h16v2H15zm0 4h16v2H15zm0 4h16v2H15zm0 4h16v2H15zm0 4h16v2H15z"/>
+    <path d="M33 8h13v2H33zm0 4h13v2H33zm0 4h13v2H33zm0 4h13v2H33zm0 4h13v2H33zm0 4h13v2H33zm0 4h13v2H33zm0 4h13v2H33zm0 4h13v2H33z"/>
+    <rect x="0" y="8" width="13" height="34" fill="#000000"/>
+    <rect x="15" y="8" width="16" height="34" fill="#000000"/>
+    <rect x="33" y="8" width="13" height="34" fill="#000000"/>
+    <text x="52" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000000">IBM</text>
+  </g>
+</svg>

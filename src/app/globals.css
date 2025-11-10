@@ -1,0 +1,259 @@
+@import '@carbon/styles/css/styles.css';
+
+:root {
+  --background: #f4f4f4;
+  --foreground: #161616;
+  --header-height: 48px;
+  
+  /* IBM Font Variables */
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-serif: var(--font-ibm-plex-serif);
+  --font-mono: var(--font-ibm-plex-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Carbon Design System overrides - Ensure strict boxy corners */
+.cds--grid {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.cds--header {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  height: var(--header-height);
+}
+
+.cds--header-name {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+/* Force all Carbon components to be boxy (no rounded corners) */
+.cds--tile,
+.cds--card,
+.cds--btn,
+.cds--text-input,
+.cds--select-input,
+.cds--dropdown,
+.cds--modal-container,
+.cds--modal-content,
+.cds--notification,
+.cds--data-table,
+.cds--progress-bar,
+.cds--accordion__item,
+.cds--tab-content,
+.cds--structured-list,
+.cds--code-snippet,
+.cds--overflow-menu,
+.cds--tooltip,
+.cds--expandable-tile,
+.cds--tag {
+  border-radius: 0 !important;
+}
+
+/* Ensure all tiles have proper Carbon styling */
+.cds--tile {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  background: white;
+  margin-bottom: 1rem;
+}
+
+.cds--tile:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Content spacing */
+.cds--content {
+  padding-top: calc(var(--header-height) + 1rem);
+  min-height: 100vh;
+  background: var(--background);
+}
+
+/* IBM Font Utility Classes */
+.font-sans {
+  font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-ibm-plex-serif), 'IBM Plex Serif', Georgia, serif;
+}
+
+.font-mono {
+  font-family: var(--font-ibm-plex-mono), 'IBM Plex Mono', 'SF Mono', Monaco, 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+}
+
+/* Headings using IBM Plex Sans */
+h1, h2, h3, h4, h5, h6,
+.cds--header-name {
+  font-family: var(--font-ibm-plex-sans), 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+  font-weight: 600;
+}
+
+/* Code elements using IBM Plex Mono */
+code, pre, .cds--code-snippet,
+.cds--code-snippet code {
+  font-family: var(--font-ibm-plex-mono), 'IBM Plex Mono', 'SF Mono', Monaco, 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace !important;
+}
+
+/* Section styling for Customer Profile */
+.profile-section {
+  margin-bottom: 1.5rem;
+}
+
+.profile-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #0f62fe;
+}
+
+.profile-section-content {
+  padding: 1rem;
+  background: #f9f9f9;
+  min-height: 4rem;
+  border-left: 4px solid #0f62fe;
+}
+
+/* Responsive design */
+@media (max-width: 1056px) {
+  .cds--grid {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cds--grid {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Loading spinner animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Card shine animation */
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+/* Glow animation for text */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 10px rgba(36, 161, 72, 0.6), 0 0 20px rgba(36, 161, 72, 0.4), 0 0 30px rgba(36, 161, 72, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(36, 161, 72, 0.8), 0 0 25px rgba(36, 161, 72, 0.6), 0 0 35px rgba(36, 161, 72, 0.4);
+  }
+}
+
+/* IBM Carbon Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8d8d8d;
+  border-radius: 0;
+  border: 1px solid #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+
+::-webkit-scrollbar-corner {
+  background: #f4f4f4;
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #8d8d8d #f4f4f4;
+}
+
+/* Ensure scrollbars are always visible for better UX */
+.cds--tile,
+.cds--card,
+.cds--modal-content,
+.cds--data-table,
+.cds--accordion__content {
+  scrollbar-width: thin;
+  scrollbar-color: #8d8d8d #f4f4f4;
+}
+
+/* Custom scrollbar for offer items container */
+.offer-items-scroll {
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+.offer-items-scroll::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari/Edge */
+}
+
+.offer-items-scroll > * {
+  direction: ltr; /* Reset direction for content */
+}
+
+.offer-items-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.offer-items-scroll::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 0;
+}
+
+.offer-items-scroll::-webkit-scrollbar-thumb {
+  background: #8d8d8d;
+  border-radius: 0;
+  border: 1px solid #e0e0e0;
+}
+
+.offer-items-scroll::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+
+
