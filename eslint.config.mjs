@@ -14,9 +14,9 @@ const eslintConfig = [
   {
     rules: {
       "react/no-unescaped-entities": "warn",
-      "react-hooks/exhaustive-deps": "warn"
-    }
-  }
+      "react-hooks/exhaustive-deps": "warn",
+    },
+  },
 ];
 
 export default eslintConfig;
